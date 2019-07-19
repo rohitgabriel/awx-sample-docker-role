@@ -7,4 +7,4 @@
   - debug: var=configure_result
 
   roles:
-  - geerlingguy.docker
+    - geerlingguy.docker
