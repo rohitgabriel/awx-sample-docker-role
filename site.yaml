@@ -1,5 +1,5 @@
 - hosts: all
-
+  become: yes
   # tasks:
   # - name: Install docker galaxy role
   #   command: ansible-galaxy install geerlingguy.docker
