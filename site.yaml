@@ -8,7 +8,33 @@
   vars:
     ldap_username:  admin              # LDAP root user name
     ldap_password:  password             # LDAP root password
-    ldap_basedn:    dc=eit,dc=com   # Base DN
+    ldap_basedn:    dc=golili,dc=net             # Base DN
+    ldap_auth:                                   # LDAP Authetication config
+      server_uri:     ldap://localhost:389
+      bind_dn:        cn=admin,{{ldap_basedn}}   # Requires ldap_basedn
+      bind_pw:        secret
+    ldap_users:
+      user_id1:
+        cn: rohitgabriel
+        givenname: rohit
+        sn: gabriel
+        mail: rohit.gabriel@enterpriseit.co.nz
+        userpassword: password
+      user_id2:
+        cn: altafparkar
+        givenname: altaf
+        sn: parkar
+        mail: altaf.parkar@enterpriseit.co.nz
+        userpassword: password
+    ldap_groups:
+      - name: awxadmingroup
+        members:
+          - user_id1
+          - user_id2
+      - name: awxmonitorgroup
+        members:
+          - user_id1
+          - user_id2
 
   roles:
   - geerlingguy.docker
