@@ -1,3 +1,10 @@
 - hosts: all
+
+  tasks:
+  - name: Install docker galaxy role
+    command: ansible-galaxy install geerlingguy.docker
+    register: configure_result
+  - debug: var=configure_result
+
   roles:
   - geerlingguy.docker
