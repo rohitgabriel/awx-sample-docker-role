@@ -1,0 +1,31 @@
+https://docs.ansible.com/ansible-tower/latest/html/administration/ldap_auth.html
+ldap://10.0.1.149:389
+cn=admin,dc=golili,dc=net
+secret
+(uid=%(user)s)
+cn=awxadmingroup,dc=golili,dc=net
+[
+"OU=Users,DC=golili,DC=net",
+"SCOPE_SUBTREE",
+"(cn=%(user)s)"
+]
+ [
+"dc=golili,dc=net",
+"SCOPE_SUBTREE",
+"(objectClass=group)"
+ ]
+ {
+"first_name": "givenName",
+"last_name": "sn",
+"email": "mail"
+}
+{
+ "name_attr": "cn",
+ "member_attr": "member"
+}
+{
+"is_superuser": "cn=awxadmingroup,ou=groups,dc=golili,dc=net",
+"is_system_auditor": "cn=awxmonitorgroup,ou=groups,dc=golili,dc=net"
+}
+{}
+{}
