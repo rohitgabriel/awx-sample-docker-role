@@ -6,5 +6,5 @@
     register: configure_result
   - debug: var=configure_result
 
-  # roles:
-  #   - geerlingguy.docker
+  roles:
+    - geerlingguy.docker
