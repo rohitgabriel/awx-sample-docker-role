@@ -2,3 +2,7 @@
 - src: https://github.com/geerlingguy/ansible-role-docker.git
   version: master
   name: geerlingguy.docker
+
+- src: capitanh.openldap-ansible-role
+  version: master
+  name: openldap

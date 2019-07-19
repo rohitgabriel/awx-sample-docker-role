@@ -5,6 +5,11 @@
   #   command: ansible-galaxy install geerlingguy.docker
   #   register: configure_result
   # - debug: var=configure_result
+  vars:
+    ldap_username:  admin              # LDAP root user name
+    ldap_password:  password             # LDAP root password
+    ldap_basedn:    dc=eit,dc=com   # Base DN
 
   roles:
   - geerlingguy.docker
+  - openldap
